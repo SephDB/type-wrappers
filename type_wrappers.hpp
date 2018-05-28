@@ -15,13 +15,17 @@
 
 namespace type_wrappers {
 	namespace detail {
+        template<class T>
+        struct TypeWrapper {
+            using type = T;
+        };
 		template<auto Val>
 		struct ValueWrapper {
 			static constexpr auto value = Val;
 		};
 	}
 	template<auto Val> detail::ValueWrapper<Val> wrap();
-	template<class T> T wrap();
+	template<class T> detail::TypeWrapper<T> wrap();
 }
 
 #define TYPE_WRAPPERS_GET_class class
