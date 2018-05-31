@@ -92,4 +92,7 @@ template<template<TYPE_WRAPPERS_TARGS(ARGS,VARARG)>class TT> detail::BOOST_PP_CA
 #define TYPE_WRAPPERS_UNWRAP_EXACT(...) TYPE_WRAPPERS_UNWRAP_IMPL(BOOST_PP_VARIADIC_TO_LIST(__VA_ARGS__),0)
 #define TYPE_WRAPPERS_UNWRAP_VARARG(...) TYPE_WRAPPERS_UNWRAP_IMPL(BOOST_PP_VARIADIC_TO_LIST(__VA_ARGS__),1)
 
+#define TYPE_WRAP(...) decltype(type_wrappers::wrap<__VA_ARGS__>())
+#define TYPE_UNWRAPPER(...) decltype(type_wrappers::unwrapper<__VA_ARGS__>())::type
+
 #endif
