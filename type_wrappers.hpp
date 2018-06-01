@@ -5,6 +5,7 @@
 #include <boost/preprocessor/list/for_each_i.hpp>
 #include <boost/preprocessor/list/fold_left.hpp>
 #include <boost/preprocessor/list/transform.hpp>
+#include <boost/preprocessor/list/size.hpp>
 #include <boost/preprocessor/punctuation/comma_if.hpp>
 #include <boost/preprocessor/control/iif.hpp>
 #include <boost/preprocessor/control/expr_if.hpp>
