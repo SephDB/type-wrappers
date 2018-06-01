@@ -60,7 +60,7 @@ The `VARARG` variants create their wrappers with the last argument as a variable
 
 Because the first argument to `NonClassTemplate` is a template template parameter, you need to define the following two macro's with a unique name before you can create its unwrapper:
 ```c++
-#define TYPE_WRAPPERS_GET_tcc template<class,class>class
+#define TYPE_WRAPPERS_GET_tcc template<class...>class
 #define TYPE_WRAPPERS_CLASS_tcc TYPE_WRAPPERS_CLASS_TT
 ```
 
@@ -89,7 +89,7 @@ struct NonClassTemplate;
 template<template<class...>class T, class... Args>
 using apply = T<Args...>;
 
-#define TYPE_WRAPPERS_GET_tcc template<class,class>class
+#define TYPE_WRAPPERS_GET_tcc template<class...>class
 #define TYPE_WRAPPERS_CLASS_tcc TYPE_WRAPPERS_CLASS_TT
 
 TYPE_WRAPPERS_WRAP_VARARG(class)
